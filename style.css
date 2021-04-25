@@ -1,0 +1,22 @@
+*{
+    font-family: 'Karla', sans-serif;
+    font-size: 1.1rem;
+    margin: 10;
+    border: 10;
+}
+
+input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h5{
+    margin: 0;
+}
+
+input{
+    width: 50px;
+    border-radius: 5px;
+    border-width: 0.2px;
+    margin: 3px;
+}
