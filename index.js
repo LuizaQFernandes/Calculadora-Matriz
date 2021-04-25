@@ -31,7 +31,7 @@ function buscar(){
             }
             else{
                 valor = `${document.getElementById(`array[${i}][${j}]`).value}`;
-            document.getElementById("array").innerHTML += `${valor}, `
+                document.getElementById("array").innerHTML += `${valor}, `
 
             }
             console.log(` Matriz[${i}][${j}] = ${valor}`); 
