@@ -26,7 +26,7 @@ body{
 
     width: 600px;
     border-radius: 20px;
-    margin-top: 50px;
+    margin: 50px;
     padding: 25px;
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.356);
 
@@ -76,5 +76,14 @@ h2{
     --blue: #1AA1A6;
     --red:#ff414d;
     --pink:#f56a79;
-    --gray:#d9ecf2;
+    --gray:#f7f7f7;
+}
+
+footer{
+    font-size: 0.6rem;
+    padding: 20px
+}
+
+a{
+    color: white
 }
