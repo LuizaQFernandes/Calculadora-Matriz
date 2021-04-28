@@ -10,23 +10,27 @@
 </head>
 
 <body>
-    <div class="container-text">
-        <h1>Calculadora | Matrizes</h1>
+    <div class="container">
+        <div class="container-text">
+            <div>
+            <h1>Calculadora | Matrizes</h1>
 
-        Digite o número de linhas <input type="number" class="form-control" id="num1" /><br>
-        Digite o número de colunas <input type="number" class="form-control" id="num2" /><br>
+            Digite o número de linhas <input type="number"  id="num1" /><br>
+            Digite o número de colunas <input type="number"  id="num2" /><br>
 
-        <button onClick="montar()"> Enviar </button><br><br>
+            <button class="button" onClick="montar()"> Enviar </button><br><br>
 
-        <h5 id="mxn"></h5> 
+            <h3 id="mxn"></h3>
+            
+            <div class="container">
+                <div id="input-array"></div>
+            </div>
 
-        <br>
+            <div id="array"></div>
 
-        <div id="input-array"></div> 
-
-        <div id="array"></div>
-
-        <script src="./index.js">  </script>
+            <script src="./index.js"></script>
+            </div>
+        </div>
     </div>
 </body>
 

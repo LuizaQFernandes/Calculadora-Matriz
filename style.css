@@ -1,26 +1,80 @@
 *{
     font-family: 'Karla', sans-serif;
-    font-size: 1.1rem;
-    margin: 10;
-    border: 10;
+
+}
+
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom right, var(--darkBlue),var(--blue));
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.container-text{
+    display: flex;
+    justify-content: center;
+
+    width: 600px;
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 25px;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.356);
+
+    background-color: var(--gray);
 }
 
 input{
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-h5{
-    margin: 0;
-}
-
-input{
     width: 50px;
     border-radius: 5px;
     border-width: 0.2px;
     margin: 3px;
+
+    height: 20px
 }
 
-button{
+.button{
     margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    background-color: var(--blue);
+    border-radius: 10px;
+    border-color: var(--blue);
+
+    width: 100px;
+    
+    font-size: 0.9rem;
+
+    transition: 0.2s;
+}
+
+.button:hover{
+    background-color: var(--darkBlue);
+    border-color: var(--darkBlue);
+    cursor: pointer;
+    color: white;
+}
+
+h2{
+    margin-top: 0
+}
+
+:root{
+    --darkBlue:#002d40;
+    --blue: #1AA1A6;
+    --red:#ff414d;
+    --pink:#f56a79;
+    --gray:#d9ecf2;
 }

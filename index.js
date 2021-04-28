@@ -3,7 +3,7 @@ function montar(){
     let numLinhas = parseFloat(document.getElementById("num1").value);
     let numColunas = parseFloat(document.getElementById("num2").value);
 
-    document.getElementById("mxn").textContent = `Matriz = ${numLinhas} X ${numColunas} `
+    document.getElementById("mxn").textContent = `Matriz = ${numLinhas} X ${numColunas} | Insira os valores da matriz `
 
     for(var i = 1; i <= numLinhas; i++){
         for(var j = 1; j <= numColunas; j++){
@@ -11,7 +11,7 @@ function montar(){
         }
         document.getElementById("input-array").innerHTML += `<br>`
     }
-    document.getElementById("input-array").innerHTML += '<button onClick="buscar()"> Enviar </button><br><br>'
+    document.getElementById("input-array").innerHTML += '<div class="container"><button type="button" class="button" onClick="buscar()" >Enviar</button> </div>'
 }
 
 function buscar(){
