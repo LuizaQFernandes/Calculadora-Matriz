@@ -1,6 +1,5 @@
 *{
     font-family: 'Roboto', sans-serif;
-
 }
 
 html {
@@ -41,19 +40,28 @@ input{
     border-width: 0.2px;
     margin: 3px;
 
-    height: 20px
+    height: 20px;
+
+    font-size: 0.9rem;
+
 }
+
+::-webkit-input-placeholder {
+    color: black;
+ }
 
 .button{
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 
     background-color: var(--blue);
     border-radius: 10px;
     border-color: var(--blue);
 
-    width: 100px;
+    width: auto;
     
     font-size: 0.9rem;
 
@@ -67,8 +75,61 @@ input{
     color: white;
 }
 
-h2{
-    margin-top: 0
+
+.buttonEnviar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    background-color: var(--pink);
+    border-radius: 10px;
+    border-color:  var(--pink);
+
+    width: auto;
+    
+    font-size: 0.9rem;
+
+    transition: 0.2s;
+}
+
+.buttonEnviar:hover{
+    background-color: var(--red);
+    border-color: var(--red);
+    cursor: pointer;
+    color: white;
+}
+
+.buttonVoltar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    background-color: var(--yellow);
+    border-radius: 10px;
+    border-color:  var(--yellow);
+
+    width: auto;
+    
+    font-size: 0.9rem;
+
+    transition: 0.2s;
+}
+
+.buttonVoltar:hover{
+    background-color: var(--darkYellow);
+    border-color: var(--darkYellow);
+    cursor: pointer;
+    color: white;
+}
+
+a{
+    padding: 10px;
+    font-size: 0.6rem;
+    color: white
 }
 
 :root{
@@ -77,13 +138,8 @@ h2{
     --red:#ff414d;
     --pink:#f56a79;
     --gray:#f7f7f7;
-}
+    --yellow: #ffdc41;
+    --darkYellow: #f0850c;
 
-footer{
-    font-size: 0.6rem;
-    padding: 20px
-}
 
-a{
-    color: white
 }
