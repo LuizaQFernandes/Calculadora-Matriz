@@ -57,10 +57,6 @@ input{
 ::-webkit-input-placeholder {
     color: black;
 }
- 
-.top{
-    margin-top: 0;
-}
 
 #erro{
     width: 400px;
@@ -68,7 +64,7 @@ input{
 
 .button{
 
-    margin-bottom: 8px;
+    margin: 3px;
 
     padding: 5px;
     padding-left: 15px;
