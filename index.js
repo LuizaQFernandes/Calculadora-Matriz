@@ -188,17 +188,23 @@ function InícioMatrizMult(){
             Digite o número pelo qual deseja multiplicar a Matriz <input type="number" id="num">
         </div>
     </div>
+
     <div class="container">
         <button class="buttonEnviar" id="buttonEnviarInput" onClick="montarMatriz()"> Enviar </button>
     </div>
+
     <div id="título-input"></div> 
+
     <div class="container">
         <div id="input-array"></div>
     </div>
+
     <div id="títuloMatrizMulti"></div>
+
     <div class="container">
         <div id="MatrizM"></div>
     </div>
+    
     <div id="buttonVoltar"></div>
 `
 }
@@ -300,6 +306,7 @@ function InícioMatrizMultMatriz(){
     </div>
 
     <div id="títuloMatrizMM"></div>
+
     <div class="container">
         <div id="MatrizMM"></div>
     </div>
