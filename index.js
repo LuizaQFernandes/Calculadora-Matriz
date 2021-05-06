@@ -3,6 +3,10 @@
 
 function InícioMatrizTransposta(){      //NÚMERO DE LINHAS E COLUNAS DA MATRIZ 
 
+    document.getElementById("OP4").disabled = true; //DESATIVANDO BOTÔES DAS OUTRAS OPÇÕES
+    document.getElementById("OP2").disabled = true;
+    document.getElementById("OP3").disabled = true;
+
     document.getElementById("escolha").innerHTML += `<br>
 
     <center><h2>Insira a ordem da Matriz</h2></center>
@@ -91,6 +95,10 @@ function resultadoMatrizTransposta(){ //MONTA A MATRIZ TRANSPOSTA
 
 function InícioMatrizOposta(){      //NÚMERO DE LINHAS E COLUNAS DA MATRIZ 
 
+    document.getElementById("OP1").disabled = true; //DESATIVANDO BOTÔES DAS OUTRAS OPÇÕES
+    document.getElementById("OP2").disabled = true;
+    document.getElementById("OP3").disabled = true;
+
     document.getElementById("escolha").innerHTML += `<br>
 
     <center><h2>Insira a ordem da Matriz</h2></center>
@@ -176,7 +184,11 @@ function resultadoMatrizOposta(){ //MONTA O MATRIZ OPOSTA
 
 //MATRIZ MULTIPLICADA POR NÚMERO REAL
 
-function InícioMatrizMult(){     
+function InícioMatrizMult(){   
+    
+    document.getElementById("OP4").disabled = true; //DESATIVANDO BOTÔES DAS OUTRAS OPÇÕES
+    document.getElementById("OP2").disabled = true;
+    document.getElementById("OP1").disabled = true;
 
     document.getElementById("escolha").innerHTML += `<br>
     <center><h2>Insira a ordem da Matriz</h2></center>
@@ -266,7 +278,11 @@ function resultadoMatrizMult(){
 
 //MULTIPLICAÇÃO DE DUAS MATRIZES
 
-function InícioMatrizMultMatriz(){     
+function InícioMatrizMultMatriz(){ 
+    
+    document.getElementById("OP4").disabled = true; //DESATIVANDO BOTÔES DAS OUTRAS OPÇÕES
+    document.getElementById("OP3").disabled = true;
+    document.getElementById("OP1").disabled = true;
 
     document.getElementById("escolha").innerHTML += `<br>
     <center><h2>Insira a ordem da Matriz</h2></center>
