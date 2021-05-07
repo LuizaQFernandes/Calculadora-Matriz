@@ -151,7 +151,6 @@ button:disabled:hover{
     color: black;
 
     cursor: not-allowed;
-
 }
 
 a{
@@ -167,7 +166,5 @@ a{
     --pink:#f56a79;
     --gray:#f7f7f7;
     --yellow: #ffdc41;
-    --darkYellow: #f0850c;
-
-
+    --darkYellow: #ff9318 ;
 }
