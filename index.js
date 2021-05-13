@@ -332,7 +332,7 @@ function montar2Matriz(){
     let numColunas2 = parseFloat(document.getElementById("colunas2").value);
 
     if(numColunas1 !== numLinhas2){
-        document.getElementById("erro").innerHTML += `<p>Erro ao multiplicar as Matrizes! O número de colunas da Matriz 1 é diferente do número de linhas da Matriz 2`
+        document.getElementById("erro").innerHTML += `<img src="./images/Questions-bro.svg"/><p>Erro ao multiplicar as Matrizes! O número de colunas da Matriz 1 é diferente do número de linhas da Matriz 2`
         document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
     }
     else{
@@ -387,11 +387,245 @@ function resultadoMatrizMultMatriz(){
     document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
 }
 
+//SOMA DE DUAS MATRIZES
+function InícioMatrizSoma(){
+
+    Bloqueio();
+
+    document.getElementById("escolha").innerHTML += `<br>
+    <center><h2>Insira a ordem da Matriz</h2></center>
+    
+    <div class="container">
+        <div>
+            Digite o número de linhas da 1ª Matriz <input type="number"  id="linhas1" /><br>
+            Digite o número de colunas da 1ª Matriz <input type="number"  id="colunas1" /><br>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div>
+            Digite o número de linhas da 2ª Matriz <input type="number"  id="linhas2" /><br>
+            Digite o número de colunas da 2ª Matriz <input type="number"  id="colunas2" /><br>
+        </div>
+    </div>    
+    
+    <div class="container">
+        <button class="buttonEnviar" id="buttonEnviarInput" onClick="MontaMatrizesSoma()"> Enviar </button>
+    </div>
+
+    <div class="container">
+        <div id="erro"></div>
+    </div>
+
+    <div id="título-input1"></div> 
+
+    <div class="container">
+        <div id="input-array1"></div>
+    </div>
+
+    <div id="título-input2"></div> 
+
+    <div class="container">
+        <div id="input-array2"></div>
+    </div>
+
+    <div id="títuloMatrizSomada"></div>
+
+    <div class="container">
+        <div id="MatrizSomada"></div>
+    </div>
+    <div id="buttonVoltar"></div>
+`
+}
+
+//MONTA AS MATRIZES
+function MontaMatrizesSoma(){  
+    
+    document.getElementById("buttonEnviarInput").disabled = true
+
+    let numLinhas1 = parseFloat(document.getElementById("linhas1").value);
+    let numColunas1 = parseFloat(document.getElementById("colunas1").value);
+    let numLinhas2 = parseFloat(document.getElementById("linhas2").value);
+    let numColunas2 = parseFloat(document.getElementById("colunas2").value);
+
+    if(numColunas1 !== numColunas2 || numLinhas1 !== numLinhas2){
+        document.getElementById("erro").innerHTML += `<img src="./images/Questions-bro.svg"/> <p>Na adição entre duas matrizes as duas devem ser de mesma ordem. Por exemplo, matriz de ordem 2×2, 3×3, 4×4, etc. <br>Ou seja, <b>ambas devem ter os mesmos números de linhas e colunas.`
+        document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
+    }
+    else{
+        document.getElementById("título-input1").innerHTML += `<center><h2>Insira os valores 1ª Matriz </h2></center>`
+
+        for(var i = 1; i <= numLinhas1; i++){
+            for(var j = 1; j <= numColunas1; j++){
+                document.getElementById("input-array1").innerHTML += `<input type="number" id="array1[${i}][${j}]"/>`
+            }
+            document.getElementById("input-array1").innerHTML += `<br>`
+        }
+    
+        document.getElementById("título-input2").innerHTML = `<center><br><h2>Insira os valores 2ª Matriz <br> </h2></center>`
+    
+        for(var i = 1; i <= numLinhas2; i++){
+            for(var j = 1; j <= numColunas2; j++){
+                document.getElementById("input-array2").innerHTML += `<input type="number" id="array2[${i}][${j}]"/>`
+            }
+            document.getElementById("input-array2").innerHTML += `<br>`
+        }
+        document.getElementById("input-array2").innerHTML += '<div class="container"><button type="button" class="buttonEnviar"  id="buttonMontarMatriz" onClick="resultadoMatrizSomada()" >Enviar</button> </div>'
+    }
+}
+
+//REALIZA A SOMA DAS MATRIZES E MOSTRA O RESULTADO
+function resultadoMatrizSomada(){ 
+
+    document.getElementById("buttonMontarMatriz").disabled = true
+
+    let numLinhas1 = parseFloat(document.getElementById("linhas1").value);
+    let numColunas1 = parseFloat(document.getElementById("colunas1").value);
+    
+    document.getElementById("títuloMatrizSomada").innerHTML += `<br><center><h2>Matriz Somada</h2></center>`
+   
+    for(var i = 1; i <= numColunas1; i++){
+        for(var j = 1; j <= numLinhas1; j++){
+           
+        let resultado = 0; 
+
+           if(j == numColunas1){
+            resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) + parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
+            document.getElementById("MatrizSomada").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/> <br>`
+        }
+        else{
+            resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) + parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
+            document.getElementById("MatrizSomada").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/> `
+        }
+
+        } 
+    }
+    document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
+}
+
+    //SUBTRAÇÃO DE DUAS MATRIZES
+    function InícioMatrizSubtracao(){
+
+        Bloqueio();
+
+        document.getElementById("escolha").innerHTML += `<br>
+        <center><h2>Insira a ordem da Matriz</h2></center>
+        
+        <div class="container">
+            <div>
+                Digite o número de linhas da 1ª Matriz <input type="number"  id="linhas1" /><br>
+                Digite o número de colunas da 1ª Matriz <input type="number"  id="colunas1" /><br>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div>
+                Digite o número de linhas da 2ª Matriz <input type="number"  id="linhas2" /><br>
+                Digite o número de colunas da 2ª Matriz <input type="number"  id="colunas2" /><br>
+            </div>
+        </div>    
+        
+        <div class="container">
+            <button class="buttonEnviar" id="buttonEnviarInput" onClick="MontaMatrizesSubtracao()"> Enviar </button>
+        </div>
+
+        <div class="container">
+            <div id="erro"></div>
+        </div>
+
+        <div id="título-input1"></div> 
+
+        <div class="container">
+            <div id="input-array1"></div>
+        </div>
+
+        <div id="título-input2"></div> 
+
+        <div class="container">
+            <div id="input-array2"></div>
+        </div>
+
+        <div id="títuloMatrizSubtraida"></div>
+
+        <div class="container">
+            <div id="MatrizSubstraida"></div>
+        </div>
+        <div id="buttonVoltar"></div>
+    `
+    }
+
+    //MONTA AS MATRIZES DE SUBTRAÇÃO
+    function MontaMatrizesSubtracao(){  
+        
+        document.getElementById("buttonEnviarInput").disabled = true
+
+        let numLinhas1 = parseFloat(document.getElementById("linhas1").value);
+        let numColunas1 = parseFloat(document.getElementById("colunas1").value);
+        let numLinhas2 = parseFloat(document.getElementById("linhas2").value);
+        let numColunas2 = parseFloat(document.getElementById("colunas2").value);
+
+        if(numColunas1 !== numColunas2 || numLinhas1 !== numLinhas2){
+            document.getElementById("erro").innerHTML += `<img src="./images/Questions-bro.svg"/> <p>Na subtração entre duas matrizes as duas devem ser de mesma ordem. Por exemplo, matriz de ordem 2×2, 3×3, 4×4, etc. <br>Ou seja, <b>ambas devem ter os mesmos números de linhas e colunas.`
+            document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
+        }
+        else{
+            document.getElementById("título-input1").innerHTML += `<center><h2>Insira os valores 1ª Matriz </h2></center>`
+
+            for(var i = 1; i <= numLinhas1; i++){
+                for(var j = 1; j <= numColunas1; j++){
+                    document.getElementById("input-array1").innerHTML += `<input type="number" id="array1[${i}][${j}]"/>`
+                }
+                document.getElementById("input-array1").innerHTML += `<br>`
+            }
+        
+            document.getElementById("título-input2").innerHTML = `<center><br><h2>Insira os valores 2ª Matriz <br> </h2></center>`
+        
+            for(var i = 1; i <= numLinhas2; i++){
+                for(var j = 1; j <= numColunas2; j++){
+                    document.getElementById("input-array2").innerHTML += `<input type="number" id="array2[${i}][${j}]"/>`
+                }
+                document.getElementById("input-array2").innerHTML += `<br>`
+            }
+            document.getElementById("input-array2").innerHTML += '<div class="container"><button type="button" class="buttonEnviar"  id="buttonMontarMatriz" onClick="resultadoMatrizSubtraida()" >Enviar</button> </div>'
+        }
+    }
+
+    //REALIZA A SUBTRAÇÃO DAS MATRIZES E MOSTRA O RESULTADO
+    function resultadoMatrizSubtraida(){ 
+
+        document.getElementById("buttonMontarMatriz").disabled = true
+
+        let numLinhas1 = parseFloat(document.getElementById("linhas1").value);
+        let numColunas1 = parseFloat(document.getElementById("colunas1").value);
+        
+        document.getElementById("títuloMatrizSubtraida").innerHTML += `<br><center><h2>Matriz Subtraída</h2></center>`
+    
+        for(var i = 1; i <= numColunas1; i++){
+            for(var j = 1; j <= numLinhas1; j++){
+            
+            let resultado = 0; 
+          
+               if(j == numColunas1){
+                resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) - parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
+                document.getElementById("MatrizSubstraida").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/> <br>`
+            }
+            else{
+                resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) - parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
+                document.getElementById("MatrizSubstraida").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/>`
+            }
+
+            } 
+        }
+        document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
+    }
+
 function Bloqueio(){   //DESATIVANDO BOTÔES DAS OUTRAS OPÇÕES
     document.getElementById("OP1").disabled = true;
     document.getElementById("OP2").disabled = true;
     document.getElementById("OP3").disabled = true;
     document.getElementById("OP4").disabled = true; 
+    document.getElementById("OP5").disabled = true; 
+    document.getElementById("OP6").disabled = true; 
 }
 
 function Voltar(){
@@ -400,6 +634,8 @@ function Voltar(){
     document.getElementById("OP2").disabled = false;
     document.getElementById("OP3").disabled = false;
     document.getElementById("OP4").disabled = false; 
+    document.getElementById("OP5").disabled = false; 
+    document.getElementById("OP6").disabled = false; 
 }
 
 
