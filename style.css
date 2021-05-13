@@ -35,7 +35,7 @@ img{
     width: 600px;
     border-radius: 20px;
     margin: 18px;
-    padding: 25px;
+    padding: 20px;
     box-shadow: 0 0 2em rgba(0, 0, 0, 0.356);
 
     background-color: var(--gray);

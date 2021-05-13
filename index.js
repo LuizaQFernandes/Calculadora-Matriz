@@ -438,7 +438,7 @@ function InícioMatrizSoma(){
 `
 }
 
-//MONTA AS MATRIZES
+//MONTA AS MATRIZES DE SOMA
 function MontaMatrizesSoma(){  
     
     document.getElementById("buttonEnviarInput").disabled = true
@@ -484,21 +484,20 @@ function resultadoMatrizSomada(){
     
     document.getElementById("títuloMatrizSomada").innerHTML += `<br><center><h2>Matriz Somada</h2></center>`
    
-    for(var i = 1; i <= numColunas1; i++){
-        for(var j = 1; j <= numLinhas1; j++){
+    for(var i = 1; i <= numLinhas1; i++){
+        for(var j = 1; j <= numColunas1; j++){
            
-        let resultado = 0; 
+        let resultado = 0;
 
-           if(j == numColunas1){
+        if(j == numColunas1){
             resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) + parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
             document.getElementById("MatrizSomada").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/> <br>`
-        }
-        else{
-            resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) + parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
-            document.getElementById("MatrizSomada").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/> `
-        }
-
-        } 
+            }
+            else{
+                resultado += parseFloat(document.getElementById(`array1[${i}][${j}]`).value) + parseFloat(document.getElementById(`array2[${i}][${j}]`).value);                
+                document.getElementById("MatrizSomada").innerHTML += `<input type="number" id="arrayT[${i}][${j}]" readOnly placeholder="${resultado}"/> `
+                }
+            }
     }
     document.getElementById("buttonVoltar").innerHTML += '<br><br><center><button type="button" class="buttonVoltar" onClick="Voltar()" >Voltar ao Menu</button> </center>'
 }
@@ -600,8 +599,8 @@ function resultadoMatrizSomada(){
         
         document.getElementById("títuloMatrizSubtraida").innerHTML += `<br><center><h2>Matriz Subtraída</h2></center>`
     
-        for(var i = 1; i <= numColunas1; i++){
-            for(var j = 1; j <= numLinhas1; j++){
+        for(var i = 1; i <= numLinhas1; i++){
+            for(var j = 1; j <= numColunas1; j++){
             
             let resultado = 0; 
           
